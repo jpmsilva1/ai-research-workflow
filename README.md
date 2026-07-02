@@ -35,9 +35,9 @@ flowchart TD
     end
     
     subgraph Obsidian Vault Structure
-        O --> P[/permanent/: Consolidated Knowledge]
-        O --> Lg[/logs/: Chronological Session States]
-        O --> Gr[/graphify/: AST Project Maps]
+        O --> P["/permanent/: Consolidated Knowledge"]
+        O --> Lg["/logs/: Chronological Session States"]
+        O --> Gr["/graphify/: AST Project Maps"]
     end
 ```
 
