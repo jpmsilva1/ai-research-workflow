@@ -63,7 +63,7 @@ graph TD
 *The creation of intelligence.*
 
 * **`ml-engineer` & `ai-ml`**: Forces the use of *Best Practices* for PyTorch or TensorFlow. Avoids data leakage in cross-validation, suggests modern architectures (ResNet, Transformers, Diffusion), and manages correct GPU (CUDA) usage.
-* **`distributed-gpu-engineer`**: Scales your models to clusters (SLURM, Ray, PyTorch DDP) and debugs CUDA OOMs. *(Created by João P. M. Silva)*
+* **`distributed-gpu-engineer`**: Scales your models to clusters (SLURM, Ray, PyTorch DDP) and debugs CUDA OOMs. **Mandates and deeply analyzes cluster documentation to prevent configuration errors.** *(Created by João P. M. Silva)*
 * **`ai-engineering-toolkit`**: The Swiss Army knife of modern AI Engineering. Brings production-ready workflows: prompt evaluation across 8 dimensions, context limit planning, agent security auditing, and *eval harnesses* creation.
 * **`rag-engineer` & `embedding-strategies`**: Essential if your thesis involves Large Language Models (LLMs) reading documents. Creates perfect *Retrieval-Augmented Generation* flows, using vector databases like Pinecone or pgvector.
 * **`hugging-face-datasets` & `hugging-face-community-evals`**: Use when you need to download *Open Source* models from Hugging Face, or when you want to run *benchmarks* (standard academic evaluations) on your model locally.
