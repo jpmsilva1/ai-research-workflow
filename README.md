@@ -118,18 +118,22 @@ This ecosystem is an amalgamation of brilliant open-source tools. Credit belongs
 - **Codebase Mapping**: AST-to-Markdown Graphify concept originally developed by Safi Shamsi ([safishamsi/graphify](https://github.com/safishamsi/graphify)).
 - **OpenReview Ground Truth**: Evaluation dataset structure and ICLR 2024 peer-reviews sourced from [WestlakeNLP/Review-5K](https://huggingface.co/datasets/WestlakeNLP/Review-5K).
 
+## Release Notes
+
 <details>
-<summary><b>🚀 What's New in v3.0.0 (The Rigor & Evaluation Release)</b></summary>
+<summary><b>🚀 v3.0.0: The Rigor & Evaluation Release</b></summary>
 <br>
 
-The `v3.0.0` release introduces a massive architectural overhaul focused on empirical validation and LLM evaluation within our ecosystem:
+This major release introduces a custom evaluation framework and a complete overhaul of the "Reviewer 2" skill.
 
-*   **The Eval Harness Engine:** We built a custom evaluation framework (`scripts/run_eval_harness.py`) to mathematically score the quality and rigorousness of our agent skills. It tests against real-world ground truth data, verifying Weakness Recall (M1), Grade Calibration (M2), Hallucination rates (M3), and Domain Scope Guards (M4).
-*   **`academic-rebuttal-simulator` 2.0:** The "Reviewer 2" skill was completely rewritten based on empirical harness results.
-    *   It now features a mandatory, hidden **Forensic Scratchpad** (utilizing `<details>` HTML tags for silent Chain of Thought), which forces the agent to anchor its attention before grading.
-    *   Enforces strict mathematical audits, temporal baseline checks, and anti-sycophancy rules.
-    *   Features a fully revamped rich UI output with ASCII tables and severity-tagged emojis.
-*   **Empirical Validation (Ground Truth):** The simulator was tested and fine-tuned against a dataset of 20 real peer-reviews from top-tier venues (ICLR and NeurIPS). This guarantees that our agent catches the exact same methodological flaws that human reviewers catch.
+* **Eval Harness Engine (`run_eval_harness.py`):** A custom mathematical framework to empirically test our agent skills against real-world ground truth data (Weakness Recall, Calibration, Hallucination, and Scope).
+* **`academic-rebuttal-simulator` 2.0:** Completely rewritten based on harness results.
+  * **Hidden Forensic Scratchpad:** Uses HTML `<details>` to enforce Chain of Thought without cluttering the UI.
+  * **Strict Heuristics:** Enforces mathematical audits, temporal baseline checks, and anti-sycophancy rules.
+  * **Rich UI:** Revamped formatting with ASCII score tables and severity emojis (🔴/🟡/🟢).
+* **Empirically Validated:** Tested against a Ground Truth dataset of 20 real peer-reviews from ICLR and NeurIPS.
+
+**Acknowledgements:** Thanks to the [WestlakeNLP/Review-5K](https://huggingface.co/datasets/WestlakeNLP/Review-5K) dataset for providing the ICLR 2024 peer-review ground truth data used for validation.
 
 </details>
 
