@@ -10,7 +10,7 @@ This repository establishes a comprehensive architecture that transforms LLMs (s
 
 ## Acknowledgements
 
-This architecture heavily relies on the concept of Abstract Syntax Tree codebase mapping. We want to explicitly credit and thank the original **Graphify** tool for enabling the foundational AST-to-Markdown mapping protocol that makes our 98% token reduction possible.
+This architecture heavily relies on the concept of Abstract Syntax Tree codebase mapping. We want to explicitly credit and thank the original [Graphify](https://github.com/safishamsi/graphify) tool for enabling the foundational AST-to-Markdown mapping protocol that makes our 98% token reduction possible.
 
 ## The Research Assistant Ecosystem
 
