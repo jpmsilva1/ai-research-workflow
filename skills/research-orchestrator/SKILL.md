@@ -32,9 +32,12 @@ Guide the user through these stages in order. At each stage, suggest the relevan
 - **Prompt the user**: "Based on what we have compiled, what is your central research question?"
 
 ### Stage 4: Implementation & Experimentation
-- **Goal**: Develop models, build data pipelines, and run statistical analysis for your research.
-- **Suggest**: `ml-engineer` (for PyTorch/TensorFlow development), `data-scientist` / `polars` (for data analysis and processing), `data-engineering-data-pipeline` (for data infrastructure), `ml-pipeline-workflow` (for MLOps).
-- **Prompt the user**: "Ready to start coding the experiments, or do you need help designing the architecture first?"
+- **Goal**: Code models, process data, and ensure your experiments are perfectly reproducible for publication.
+- **Suggest**:
+  - **For Model Dev:** `ml-engineer` (PyTorch/TensorFlow), `ai-engineering-toolkit` (Prompt/Eval design), `rag-engineer`.
+  - **For Data:** `polars` (Fast in-memory processing).
+  - **For Reproducibility:** `docker-expert` (Environment containerization) and `mlops-engineer` (Experiment tracking/seeding).
+- **Prompt the user**: "Ready to start coding the experiments? I highly recommend setting up a reproducible environment first."
 
 ### Stage 5: Writing
 - **Goal**: Draft the paper or thesis chapter.
