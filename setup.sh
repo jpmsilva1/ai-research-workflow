@@ -64,7 +64,7 @@ if [[ "$AGENT_CHOICE" == "1" || "$AGENT_CHOICE" == "3" ]]; then
     ANTIGRAVITY_CONFIG="$HOME/.gemini/config"
     mkdir -p "$ANTIGRAVITY_CONFIG"
     # Write AGENTS.md with the user's vault path
-    sed "s|/Users/joaopms/Documents/AntigravityBrain|$VAULT_PATH|g" \
+    sed "s|{{VAULT_PATH}}|$VAULT_PATH|g" \
         "$SCRIPT_DIR/agents/antigravity/AGENTS.md" > "$ANTIGRAVITY_CONFIG/AGENTS.md"
     echo "  Installed AGENTS.md to $ANTIGRAVITY_CONFIG/"
 fi
@@ -72,7 +72,7 @@ fi
 if [[ "$AGENT_CHOICE" == "2" || "$AGENT_CHOICE" == "3" ]]; then
     CLAUDE_CONFIG="$HOME/.claude"
     mkdir -p "$CLAUDE_CONFIG"
-    sed "s|/Users/joaopms/Documents/AntigravityBrain|$VAULT_PATH|g" \
+    sed "s|{{VAULT_PATH}}|$VAULT_PATH|g" \
         "$SCRIPT_DIR/agents/claude/.cursorrules" > "$CLAUDE_CONFIG/.cursorrules"
     echo "  Installed .cursorrules to $CLAUDE_CONFIG/"
 fi
@@ -81,10 +81,14 @@ fi
 echo ""
 echo -e "${CYAN}Installing skills...${RESET}"
 
+# Cleanup temp before cloning
+rm -rf /tmp/ponytail-plugin /tmp/ai-research-skills /tmp/awesome-skills /tmp/aegisops-ai 2>/dev/null || true
+
 # Clone repos to temp
 git clone --quiet https://github.com/DietrichGebert/ponytail /tmp/ponytail-plugin 2>/dev/null || true
 git clone --quiet https://github.com/Orchestra-Research/AI-Research-SKILLs.git /tmp/ai-research-skills 2>/dev/null || true
 git clone --quiet https://github.com/google/antigravity-awesome-skills.git /tmp/awesome-skills 2>/dev/null || true
+git clone --quiet https://github.com/Champbreed/AegisOps-AI.git /tmp/aegisops-ai 2>/dev/null || true
 
 if [[ "$AGENT_CHOICE" == "1" || "$AGENT_CHOICE" == "3" ]]; then
     SKILLS_DIR="$HOME/.gemini/config/skills"
@@ -98,6 +102,9 @@ if [[ "$AGENT_CHOICE" == "1" || "$AGENT_CHOICE" == "3" ]]; then
 
     # Ponytail
     [ -d /tmp/ponytail-plugin ] && cp -r /tmp/ponytail-plugin "$SKILLS_DIR/ponytail" 2>/dev/null || true
+
+    # AegisOps-AI Gatekeeper
+    [ -d /tmp/aegisops-ai ] && cp -r /tmp/aegisops-ai "$SKILLS_DIR/aegisops-ai" 2>/dev/null || true
 
     # Orchestra ARA
     [ -d /tmp/ai-research-skills ] && {
@@ -127,6 +134,7 @@ if [[ "$AGENT_CHOICE" == "2" || "$AGENT_CHOICE" == "3" ]]; then
     mkdir -p "$CLAUDE_SKILLS"
 
     [ -d /tmp/ponytail-plugin ] && cp -r /tmp/ponytail-plugin "$CLAUDE_SKILLS/ponytail" 2>/dev/null || true
+    [ -d /tmp/aegisops-ai ] && cp -r /tmp/aegisops-ai "$CLAUDE_SKILLS/aegisops-ai" 2>/dev/null || true
     [ -d /tmp/ai-research-skills ] && {
         cp -r /tmp/ai-research-skills/20-ml-paper-writing/ml-paper-writing "$CLAUDE_SKILLS/" 2>/dev/null || true
         cp -r /tmp/ai-research-skills/22-agent-native-research-artifact/compiler "$CLAUDE_SKILLS/ara-compiler" 2>/dev/null || true
@@ -137,7 +145,7 @@ if [[ "$AGENT_CHOICE" == "2" || "$AGENT_CHOICE" == "3" ]]; then
 fi
 
 # --- Cleanup ---
-rm -rf /tmp/ponytail-plugin /tmp/ai-research-skills /tmp/awesome-skills
+rm -rf /tmp/ponytail-plugin /tmp/ai-research-skills /tmp/awesome-skills /tmp/aegisops-ai
 
 # --- Done ---
 echo ""
