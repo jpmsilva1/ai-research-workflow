@@ -99,14 +99,10 @@ Score legend: `1` = Fundamentally flawed, `2` = Major issues, `3` = Minor issues
 
 #### Step 8: Overall Grade
 Choose ONE. Your grade MUST be consistent with your sub-scores and weaknesses.
-Output the grade as a prominently styled callout block — **do not bury it in prose**:
+Output the grade as a prominently styled Markdown blockquote — **do not bury it in prose**. Do NOT use ASCII borders as they break with long sentences:
 
-```
-┌─────────────────────────────────┐
-│  OVERALL GRADE: [GRADE HERE]    │
-│  [One sentence verdict]         │
-└─────────────────────────────────┘
-```
+> **OVERALL GRADE: [GRADE HERE]**
+> *Verdict: [One sentence verdict]*
 
 Grades:
 - `🏆 Strong Accept` — Groundbreaking work, top 5%. All sub-scores ≥ 3, at least one at 4.
