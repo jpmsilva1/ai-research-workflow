@@ -5,8 +5,8 @@ Get from zero to a fully configured AI Research Assistant in one command.
 ## 1. Clone and Run Setup
 
 ```bash
-git clone https://github.com/jpmsilva1/ai-research-workflow.git
-cd ai-research-workflow
+git clone https://github.com/jpmsilva1/ai-research-ecosystem.git
+cd ai-research-ecosystem
 chmod +x setup.sh && ./setup.sh
 ```
 

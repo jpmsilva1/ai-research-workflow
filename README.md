@@ -1,4 +1,4 @@
-# AI-Powered Research Assistant Architecture
+# AI Research Ecosystem
 
 ![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
 ![Google Gemini](https://img.shields.io/badge/Google%20Gemini-Antigravity-4285F4.svg?logo=google&logoColor=white)
@@ -80,8 +80,8 @@ flowchart TD
 If you prefer to see exactly what gets installed, you can use the single-command setup script:
 
 ```bash
-git clone https://github.com/jpmsilva1/ai-research-workflow.git
-cd ai-research-workflow
+git clone https://github.com/jpmsilva1/ai-research-ecosystem.git
+cd ai-research-ecosystem
 chmod +x setup.sh && ./setup.sh
 ```
 
