@@ -40,7 +40,7 @@ The system supports five core operations:
 | **Query** | Ask a question | LLM reads `index.md`, drills into relevant pages, synthesizes an answer. |
 | **File** | `/file` command | A valuable query answer is saved to `wiki/synthesis/`, updating `index.md`. |
 | **Lint** | `/lint` command | LLM scans `wiki/` for broken links, orphan pages, stale entries. |
-| **Save/Resume** | `/salvar` / `/retomar` | Session state is saved to `logs/` and `changelog.md`, or restored from them. |
+| **Save/Resume** | `/save` / `/resume` | Session state is saved to `logs/` and `changelog.md`, or restored from them. |
 
 ## System Flow
 

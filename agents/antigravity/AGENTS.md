@@ -34,16 +34,16 @@ Valid types: `ingest`, `session`, `query`, `lint`, `file`.
 
 ## 5. Session Commands (Memory Protocols)
 
-### The `/salvar` (Save) Protocol
-When the user says "/salvar" or asks to document the end of the session:
+### The `/save` (Save) Protocol
+When the user says "/save" or asks to document the end of the session:
 1. Create a log in `logs/YYYY-MM-DD-topic.md`.
 2. Record: What was done, decisions made, and pending tasks.
 3. Add `[[wikilinks]]` for any key concept mentioned.
 4. Append a `session` entry to `/wiki/changelog.md`.
 5. Update `/wiki/index.md` if any new wiki pages were created during the session.
 
-### The `/retomar` (Resume) Protocol
-When the user says "/retomar" or asks to recover the context:
+### The `/resume` (Resume) Protocol
+When the user says "/resume" or asks to recover the context:
 1. Read `/wiki/changelog.md` (last 10 entries) for a timeline of recent actions.
 2. Read `/wiki/index.md` for the current state of knowledge.
 3. Optionally read the latest files from `logs/` for detailed session context.

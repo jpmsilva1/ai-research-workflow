@@ -147,6 +147,6 @@ echo -e "${BOLD}${GREEN}=================================================${RESET
 echo ""
 echo -e "Next steps:"
 echo -e "  1. Open Obsidian and point it at: ${CYAN}$VAULT_PATH${RESET}"
-echo -e "  2. Start your agent and type: ${CYAN}/retomar${RESET}"
+echo -e "  2. Start your agent and type: ${CYAN}/resume${RESET}"
 echo -e "  3. Or start a new research workflow with: ${CYAN}/research${RESET}"
 echo ""

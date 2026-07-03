@@ -35,19 +35,19 @@ Discovery -> Ingestion -> Synthesis -> Writing -> Review -> Presentation.
 
 ## 4. Save Your Session
 
-When you are done, type `/salvar`. Your progress is permanently stored in the vault.
+When you are done, type `/save`. Your progress is permanently stored in the vault.
 
 ## 5. Resume Tomorrow
 
-In a new session, type `/retomar`. The agent reads your `changelog.md` and `index.md` to pick up exactly where you left off.
+In a new session, type `/resume`. The agent reads your `changelog.md` and `index.md` to pick up exactly where you left off.
 
 ## Key Commands
 
 | Command | What It Does |
 |---|---|
 | `/research` | Start a guided research workflow |
-| `/salvar` | Save session to persistent memory |
-| `/retomar` | Resume from last session |
+| `/save` | Save session to persistent memory |
+| `/resume` | Resume from last session |
 | `/lint` | Health-check the knowledge vault |
 | `/file` | File a valuable answer into the wiki |
 

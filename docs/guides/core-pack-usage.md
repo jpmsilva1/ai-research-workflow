@@ -107,8 +107,8 @@ graph TD
 * **The Concept:** The agent is globally configured to interact with a vault located at `~/Documents/AntigravityBrain/`. Instead of spending tokens rereading your entire code every session, the agent consults the structural mapping and logbook stored in this vault.
 * **Integration with `graphify`**: The code mapping of your project is extracted via `graphify` and stored in the `/graphify/` folder of Obsidian. The agent navigates these logical connections instantly.
 * **The Session Workflow:**
-  * **Upon closing (`/salvar`):** When finishing a day of research, type `/salvar`. An official log will be created in the `/logs/` folder detailing decisions, context, and pending tasks.
-  * **Upon starting (`/retomar`):** In a new conversation, type `/retomar`. The agent will read the latest files generated in your vault and perfectly recover the context of where you left off.
+  * **Upon closing (`/save`):** When finishing a day of research, type `/save`. An official log will be created in the `/logs/` folder detailing decisions, context, and pending tasks.
+  * **Upon starting (`/resume`):** In a new conversation, type `/resume`. The agent will read the latest files generated in your vault and perfectly recover the context of where you left off.
 
 ---
 

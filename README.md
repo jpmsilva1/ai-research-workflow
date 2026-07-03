@@ -6,7 +6,11 @@
 
 **An integrated ecosystem for AI/ML research workflow optimization, driven by Persistent Memory and Autonomous Agents.**
 
-This repository establishes a comprehensive architecture that transforms LLMs (such as Google Antigravity and Claude Code) into a highly specialized **Research Assistant**. It optimizes the entire scientific lifecycle—from literature review and data engineering to model training and paper writing—while drastically reducing token consumption through a Zettelkasten-based persistent memory state machine.
+This repository establishes a comprehensive architecture that transforms LLMs (such as Google Antigravity and Claude Code) into a highly specialized **Research Assistant**. It optimizes the entire scientific lifecycle—from literature review and data engineering to model training and paper writing—while drastically reducing token consumption through a Zettelkasten-based persistent memory state machine. By moving context from the LLM prompt window into a persistent, searchable graph, we allow frontier models to focus their context on *reasoning* rather than *reading*.
+
+## Acknowledgements
+
+This architecture heavily relies on the concept of Abstract Syntax Tree codebase mapping. We want to explicitly credit and thank the original **Graphify** tool for enabling the foundational AST-to-Markdown mapping protocol that makes our 98% token reduction possible.
 
 ## The Research Assistant Ecosystem
 
