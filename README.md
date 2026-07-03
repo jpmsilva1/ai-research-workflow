@@ -124,10 +124,9 @@ This ecosystem is an amalgamation of brilliant open-source tools. Credit belongs
 <summary><b>🚀 v3.0.0: The Rigor & Evaluation Release</b></summary>
 <br>
 
-This major release introduces a custom evaluation framework and a complete overhaul of the "Reviewer 2" skill.
+This major release introduces a complete overhaul of the "Reviewer 2" skill, utilizing a proprietary evaluation framework.
 
-* **Eval Harness Engine (`run_eval_harness.py`):** A custom mathematical framework to empirically test our agent skills against real-world ground truth data (Weakness Recall, Calibration, Hallucination, and Scope).
-* **`academic-rebuttal-simulator` 2.0:** Completely rewritten based on harness results.
+* **`academic-rebuttal-simulator` 2.0:** Completely rewritten based on empirical harness results.
   * **Hidden Forensic Scratchpad:** Uses HTML `<details>` to enforce Chain of Thought without cluttering the UI.
   * **Strict Heuristics:** Enforces mathematical audits, temporal baseline checks, and anti-sycophancy rules.
   * **Rich UI:** Revamped formatting with ASCII score tables and severity emojis (🔴/🟡/🟢).
