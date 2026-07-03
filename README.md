@@ -118,6 +118,21 @@ This ecosystem is an amalgamation of brilliant open-source tools. Credit belongs
 - **Codebase Mapping**: AST-to-Markdown Graphify concept originally developed by Safi Shamsi ([safishamsi/graphify](https://github.com/safishamsi/graphify)).
 - **OpenReview Ground Truth**: Evaluation dataset structure and ICLR 2024 peer-reviews sourced from [WestlakeNLP/Review-5K](https://huggingface.co/datasets/WestlakeNLP/Review-5K).
 
+<details>
+<summary><b>🚀 What's New in v3.0.0 (The Rigor & Evaluation Release)</b></summary>
+<br>
+
+The `v3.0.0` release introduces a massive architectural overhaul focused on empirical validation and LLM evaluation within our ecosystem:
+
+*   **The Eval Harness Engine:** We built a custom evaluation framework (`scripts/run_eval_harness.py`) to mathematically score the quality and rigorousness of our agent skills. It tests against real-world ground truth data, verifying Weakness Recall (M1), Grade Calibration (M2), Hallucination rates (M3), and Domain Scope Guards (M4).
+*   **`academic-rebuttal-simulator` 2.0:** The "Reviewer 2" skill was completely rewritten based on empirical harness results.
+    *   It now features a mandatory, hidden **Forensic Scratchpad** (utilizing `<details>` HTML tags for silent Chain of Thought), which forces the agent to anchor its attention before grading.
+    *   Enforces strict mathematical audits, temporal baseline checks, and anti-sycophancy rules.
+    *   Features a fully revamped rich UI output with ASCII tables and severity-tagged emojis.
+*   **Empirical Validation (Ground Truth):** The simulator was tested and fine-tuned against a dataset of 20 real peer-reviews from top-tier venues (ICLR and NeurIPS). This guarantees that our agent catches the exact same methodological flaws that human reviewers catch.
+
+</details>
+
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
