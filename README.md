@@ -25,7 +25,8 @@ While this workflow bundles several open-source community skill packs, the follo
 - **`research-orchestrator`**: Guides the user through the full academic research lifecycle by suggesting the right skills at each stage.
 - **`distributed-gpu-engineer`**: Expert in scaling ML training across multiple GPUs and nodes. Masters SLURM, PyTorch Distributed Data Parallel (DDP), Ray, and CUDA OOM debugging.
 - **`experiment-sweeper`**: Expert in ML hyperparameter orchestration. Converts hardcoded scripts to use Hydra/OmegaConf and sets up Weights & Biases Sweeps.
-- **`academic-rebuttal-simulator`**: Simulates 'Reviewer 2' for ML papers (NeurIPS, ICLR). Critiques methodology, finds missing baselines, and helps draft author rebuttals.
+- **`academic-rebuttal-simulator` (Production Validated)**: Simulates 'Reviewer 2' for ML papers (NeurIPS, ICLR). Critiques methodology, flags out-of-scope papers, and enforces strict grading calibration.
+  - *Empirical Validation:* This skill is rigorously validated using a custom **Eval Harness** against a Ground Truth dataset of 20 real papers from ICLR and NeurIPS. It mathematically scores Weakness Recall (M1), Grade Calibration (M2), Hallucination (M3), and Scope Guards (M4) to ensure anti-sycophancy and high academic rigor.
 - **`lint-vault`**: Autonomous health-check for the Obsidian Vault to ensure structural integrity and correct Zettelkasten linking.
 
 ## The Persistent Memory Engine (Obsidian + Graphify)
@@ -115,6 +116,7 @@ This ecosystem is an amalgamation of brilliant open-source tools. Credit belongs
 - **Engineering ML Base**: Official catalog maintained by Google ([google/antigravity-awesome-skills](https://github.com/google/antigravity-awesome-skills)).
 - **Deep Research**: Developed by sanjay3290 ([sanjay3290/ai-skills](https://github.com/sanjay3290/ai-skills/tree/main/skills/deep-research)).
 - **Codebase Mapping**: AST-to-Markdown Graphify concept originally developed by Safi Shamsi ([safishamsi/graphify](https://github.com/safishamsi/graphify)).
+- **OpenReview Ground Truth**: Evaluation dataset structure and ICLR 2024 peer-reviews sourced from [WestlakeNLP/Review-5K](https://huggingface.co/datasets/WestlakeNLP/Review-5K).
 
 ## License
 
