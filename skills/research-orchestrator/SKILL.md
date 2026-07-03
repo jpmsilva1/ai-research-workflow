@@ -38,6 +38,7 @@ Guide the user through these stages in order. At each stage, suggest the relevan
   - **For Hardware & Scale:** `distributed-gpu-engineer` (SLURM, Ray, DDP scaling - *Authored by João P. M. Silva*).
   - **For Data:** `polars` (Fast in-memory processing).
   - **For Reproducibility:** `experiment-sweeper` (Hydra/W&B Configs - *Authored by João P. M. Silva*), `docker-expert` (Environment containerization), and `mlops-engineer` (Experiment tracking/seeding).
+  - **For Extreme Code Efficiency:** `ponytail` (Enforces YAGNI to cut bloatware and reduce token consumption).
 - **Prompt the user**: "Ready to start coding the experiments? I highly recommend setting up a reproducible environment first."
 
 ### Stage 5: Writing
