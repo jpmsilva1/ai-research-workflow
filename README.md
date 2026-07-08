@@ -21,16 +21,14 @@ Rather than treating AI as a simple chatbot, this architecture provides a struct
 ## Original Custom Skills
 
 While this workflow bundles several open-source community skill packs, the following highly specialized AI Research skills were authored specifically for this project by **João P. M. Silva**:
-
-- **`research-orchestrator`**: Guides the user through the full academic research lifecycle by suggesting the right skills at each stage.
-- **`distributed-gpu-engineer`**: Expert in scaling ML training across multiple GPUs and nodes. Masters SLURM, PyTorch Distributed Data Parallel (DDP), Ray, and CUDA OOM debugging.
-- **`experiment-sweeper`**: Expert in ML hyperparameter orchestration. Converts hardcoded scripts to use Hydra/OmegaConf and sets up Weights & Biases Sweeps.
-- **`academic-rebuttal-simulator` (Production Validated)**: Simulates 'Reviewer 2' for ML papers (NeurIPS, ICLR). Critiques methodology, flags out-of-scope papers, and enforces strict grading calibration.
-  - *Empirical Validation:* This skill is rigorously validated using a custom **Eval Harness** against a Ground Truth dataset of 20 real papers from ICLR and NeurIPS. It mathematically scores Weakness Recall (M1), Grade Calibration (M2), Hallucination (M3), and Scope Guards (M4) to ensure anti-sycophancy and high academic rigor.
-- **`output-shaper`**: Dynamic token compression and verbosity controller. Acts as a manual output shaper for agents to drastically reduce API costs.
-  - *Modes*: `/output-shaper lite` (removes obvious waste), `/output-shaper balanced` (prefers bullets, caps reasoning blocks), `/output-shaper ultra` (telegraphic responses, maximum token savings).
-  - *Deactivation*: Type `stop output-shaper` or `normal mode`.
-- **`lint-vault`**: Autonomous health-check for the Obsidian Vault to ensure structural integrity and correct Zettelkasten linking.
+| Skill | Category | Description & Features |
+| :--- | :--- | :--- |
+| 🎓 **`research-orchestrator`** | Workflow | Guides you through the full academic research lifecycle by suggesting the right skills at each stage. |
+| 🖥️ **`distributed-gpu-engineer`** | Infra | Scales ML training across GPUs/nodes. Masters SLURM, PyTorch DDP, Ray, and CUDA OOM debugging. |
+| 🧪 **`experiment-sweeper`** | MLOps | ML hyperparameter orchestration. Converts hardcoded scripts to use Hydra/OmegaConf and sets up W&B Sweeps. |
+| ⚖️ **`academic-rebuttal-simulator`** | Peer Review | Simulates 'Reviewer 2' (NeurIPS/ICLR). **Production Validated** via Eval Harness (scores Weakness Recall, Calibration, Hallucination, Scope). |
+| 🗜️ **`output-shaper`** | Token Mgmt | Dynamic verbosity controller to slash API costs. Modes: `lite`, `balanced`, `ultra`. Deactivate with `stop output-shaper`. |
+| 🧠 **`lint-vault`** | Memory | Autonomous health-check for the Obsidian Vault to ensure structural integrity and correct Zettelkasten linking. |
 
 ## The Network Compression Engine (Layer 1)
 
