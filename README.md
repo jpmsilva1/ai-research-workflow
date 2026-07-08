@@ -79,26 +79,39 @@ By forcing the agent to read the `wiki/index.md` catalog and Graphify AST maps *
 The interaction between the user, the LLM, and the persistent memory state is defined as follows:
 
 ```mermaid
-flowchart TD
-    U[User / Developer] -->|Interacts via CLI| L[LLM Agent]
-    
-    subgraph Local Environment
-        L -->|Reads AST Maps & Logs| O[Obsidian Vault]
-        L -->|Executes Code Changes| C[Local Codebase]
-        C -->|Parsed by| G[Graphify Engine]
-        G -->|Generates Markdown Graphs| O
+flowchart TB
+    U((User / Developer)) -->|Interacts via CLI| L[LLM Agent]
+
+    subgraph LocalEnv [Local Environment]
+        L
+
+        subgraph Workflow [Project Workspace]
+            C[Local Codebase] -->|Parsed by| G[Graphify Engine]
+        end
+
+        subgraph Vault [Obsidian Vault]
+            direction LR
+            W["/wiki/"]
+            Lg["/logs/"]
+            Gr["/graphify/"]
+        end
+
+        HP[Headroom Proxy :8787]
     end
-    
-    subgraph Obsidian Vault Structure
-        O --> P["/wiki/: Maintained Knowledge"]
-        O --> Lg["/logs/: Chronological Session States"]
-        O --> Gr["/graphify/: AST Project Maps"]
+
+    subgraph Cloud [External]
+        API((LLM API))
     end
-    
-    L -->|Sends Raw API Request| HP[Headroom Proxy :8787]
-    HP -->|Compresses Payload by 47-92%| API[LLM API]
-    API -->|Returns Response| HP
-    HP -->|Forwards Response| L
+
+    %% Internal Agent Interactions
+    L <-->|Reads & Updates| Vault
+    L -->|Executes Code Changes| C
+    G -->|Generates AST Maps| Gr
+
+    %% Network Flow
+    L -->|1. Raw Request| HP
+    HP -->|4. Return Output| L
+    HP <-->|2. Compressed Payload / 3. Response| API
 ```
 
 ## Setup Instructions
