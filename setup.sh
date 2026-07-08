@@ -45,6 +45,13 @@ echo ""
 echo -e "${BOLD}Step 4: Install Headroom token compression layer?${RESET}"
 echo "  Headroom compresses your prompts and tool outputs to save 47-92% tokens."
 echo "  It runs as a local transparent proxy on port 8787."
+if [[ "$AGENT_CHOICE" == "1" ]]; then
+    echo -e "  \033[0;33m(Warning: Antigravity connects directly to its API and bypasses local proxies. This feature is only effective for Claude Code or Cursor).\033[0m"
+elif [[ "$AGENT_CHOICE" == "3" ]]; then
+    echo -e "  \033[0;33m(Note: Proxy compression will only work for Claude Code, as Antigravity bypasses local proxies).\033[0m"
+else
+    echo -e "  \033[0;90m(Note: Proxy interception natively supports Claude Code and Cursor).\033[0m"
+fi
 read -rp "Install? (y/n) [Recommended: y]: " HEADROOM_CHOICE
 HEADROOM_CHOICE="${HEADROOM_CHOICE:-y}"
 
@@ -139,6 +146,11 @@ fi
 if [[ "$AGENT_CHOICE" == "2" || "$AGENT_CHOICE" == "3" ]]; then
     CLAUDE_SKILLS="$HOME/.claude/skills"
     mkdir -p "$CLAUDE_SKILLS"
+
+    # Copy repo-bundled skills
+    if [ -d "$SCRIPT_DIR/skills" ]; then
+        cp -r "$SCRIPT_DIR/skills/"* "$CLAUDE_SKILLS/" 2>/dev/null || true
+    fi
 
     [ -d /tmp/ponytail-plugin ] && cp -r /tmp/ponytail-plugin "$CLAUDE_SKILLS/ponytail" 2>/dev/null || true
     [ -d /tmp/aegisops-ai ] && cp -r /tmp/aegisops-ai "$CLAUDE_SKILLS/aegisops-ai" 2>/dev/null || true

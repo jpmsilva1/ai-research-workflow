@@ -36,7 +36,13 @@ if ([string]::IsNullOrWhiteSpace($VaultPath)) {
 Write-Host "`nStep 4: Install Headroom token compression layer?" -ForegroundColor White
 Write-Host "  Headroom compresses your prompts and tool outputs to save 47-92% tokens."
 Write-Host "  It runs as a local transparent proxy on port 8787."
-Write-Host "  (Note: Proxy interception natively supports Claude Code and Cursor. Antigravity requires MCP mode.)" -ForegroundColor DarkGray
+if ($AgentChoice -eq "1") {
+    Write-Host "  (Warning: Antigravity connects directly to its API and bypasses local proxies. This feature is only effective for Claude Code or Cursor)." -ForegroundColor Yellow
+} elseif ($AgentChoice -eq "3") {
+    Write-Host "  (Note: Proxy compression will only work for Claude Code, as Antigravity bypasses local proxies)." -ForegroundColor Yellow
+} else {
+    Write-Host "  (Note: Proxy interception natively supports Claude Code and Cursor)." -ForegroundColor DarkGray
+}
 $HeadroomChoice = Read-Host "Install? (y/n) [Recommended: y]"
 if ([string]::IsNullOrWhiteSpace($HeadroomChoice)) {
     $HeadroomChoice = "y"

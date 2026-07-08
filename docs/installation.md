@@ -23,7 +23,7 @@ Act as a System Setup Engineer.
 Please install my academic research ecosystem by executing the following autonomous steps in order:
 
 PHASE 1: NETWORK COMPRESSION LAYER
-1. Ask me if I want to install the Headroom compression layer (optional but recommended).
+1. Ask me if I want to install the Headroom compression layer (optional but recommended). Skip this phase entirely if I am using Google Antigravity, as it bypasses local proxies.
 2. If yes, run `pip install "headroom-ai[all]"` and set `export HEADROOM_OUTPUT_SHAPER=1` in my shell rc file. Remind me to run `headroom proxy --port 8787` in a separate terminal.
 
 PHASE 2: PERSISTENT MEMORY ENGINE
@@ -36,13 +36,15 @@ PHASE 2: PERSISTENT MEMORY ENGINE
    - If I am using Claude Code: Create `~/.claude/.cursorrules` and instruct it that the Vault path is `~/Documents/AntigravityBrain`.
 
 PHASE 3: SKILL ECOSYSTEM (Core Pack)
-1. Install the ponytail plugin by running: `agy plugin install https://github.com/DietrichGebert/ponytail` (If using Antigravity)
+1. Clone `https://github.com/DietrichGebert/ponytail` to `/tmp/ponytail-plugin`.
 2. Clone `https://github.com/Orchestra-Research/AI-Research-SKILLs.git` to `/tmp/ai-research-skills`.
 3. Create my global skills folder (`~/.gemini/config/skills/` for Antigravity OR `~/.claude/skills/` for Claude).
-4. Copy the folders `ml-paper-writing`, `academic-plotting` and the entire `22-agent-native-research-artifact` directory from `/tmp/ai-research-skills` to my local skills folder. Rename the subfolders from `22-*` to `ara-compiler`, `ara-research-manager`, and `ara-rigor-reviewer`.
-5. Clone `https://github.com/google/antigravity-awesome-skills.git` to `/tmp/awesome-skills`.
-6. Copy the following specific skills from the Google repository to my local skills folder: `papers-skill`, `deep-research`, `exa-search`, `tavily-web`, `research-brainstorming`, `creative-thinking`, `data-engineering-data-pipeline`, `data-engineering-data-driven-feature`, `data-structure-protocol`, `dbt-transformation-patterns`, `data-quality-frameworks`, `database-architect`, `database-optimizer`, `polars`, `data-scientist`, `data-storytelling`, `plotly`, `python-pro`, `python-patterns`, `ml-engineer`, `ai-ml`, `ai-engineering-toolkit`, `rag-engineer`, `embedding-strategies`, `hugging-face-datasets`, `hugging-face-community-evals`, `ml-pipeline-workflow`, `mlops-engineer`, `docker-expert`, `devops-deploy`, `unit-testing-test-generate`, `2slides-ppt-generator`, `latex-paper-conversion`, `architecture-decision-records`, `docs-architect`, `graphify`, `save-session`, `resume-session`.
-7. Once finished, delete the `/tmp/ai-research-skills` and `/tmp/awesome-skills` directories and confirm that the ecosystem is ready.
+4. Copy the `skills/` directory from the cloned ai-research-ecosystem repository to my local skills folder to install the native proprietary skills.
+5. Copy the folders `ml-paper-writing`, `academic-plotting` and the entire `22-agent-native-research-artifact` directory from `/tmp/ai-research-skills` to my local skills folder. Rename the subfolders from `22-*` to `ara-compiler`, `ara-research-manager`, and `ara-rigor-reviewer`.
+6. Copy `/tmp/ponytail-plugin` to my local skills folder as `ponytail`.
+7. Clone `https://github.com/google/antigravity-awesome-skills.git` to `/tmp/awesome-skills`.
+8. Copy the following specific skills from the Google repository to my local skills folder: `papers-skill`, `deep-research`, `exa-search`, `tavily-web`, `research-brainstorming`, `creative-thinking`, `data-engineering-data-pipeline`, `data-engineering-data-driven-feature`, `data-structure-protocol`, `data-quality-frameworks`, `polars`, `data-scientist`, `data-storytelling`, `plotly`, `ml-engineer`, `ai-ml`, `ai-engineering-toolkit`, `rag-engineer`, `embedding-strategies`, `ml-pipeline-workflow`, `mlops-engineer`, `docker-expert`, `devops-deploy`, `unit-testing-test-generate`, `2slides-ppt-generator`, `latex-paper-conversion`, `architecture-decision-records`, `docs-architect`, `graphify`, `save-session`, `resume-session`.
+9. Once finished, delete the `/tmp/ai-research-skills`, `/tmp/awesome-skills`, and `/tmp/ponytail-plugin` directories and confirm that the ecosystem is ready.
 ```
 
 *(Note: For the Full Pack, modify Phase 3 Step 6 to copy all skills instead of the specific list).*
@@ -107,30 +109,34 @@ Now that the Memory Engine is ready, install the behavioral skills.
 
 **For Google Antigravity Users (Core Pack):**
 ```bash
-# 1. Install Ponytail Plugin
-agy plugin install https://github.com/DietrichGebert/ponytail
-
-# 2. Clone Repositories to Temp
+# 1. Clone Repositories to Temp
+git clone https://github.com/DietrichGebert/ponytail /tmp/ponytail-plugin
 git clone https://github.com/Orchestra-Research/AI-Research-SKILLs.git /tmp/ai-research-skills
 git clone https://github.com/google/antigravity-awesome-skills.git /tmp/awesome-skills
 
-# 3. Create Skills Directory
+# 2. Create Skills Directory
 mkdir -p ~/.gemini/config/skills
 
-# 4. Copy Orchestra Academic & ARA Skills
+# 3. Copy Native Proprietary Skills
+cp -r skills/* ~/.gemini/config/skills/
+
+# 4. Copy Ponytail
+cp -r /tmp/ponytail-plugin ~/.gemini/config/skills/ponytail
+
+# 5. Copy Orchestra Academic & ARA Skills
 cp -r /tmp/ai-research-skills/20-ml-paper-writing/ml-paper-writing ~/.gemini/config/skills/
 cp -r /tmp/ai-research-skills/20-ml-paper-writing/academic-plotting ~/.gemini/config/skills/
 cp -r /tmp/ai-research-skills/22-agent-native-research-artifact/compiler ~/.gemini/config/skills/ara-compiler
 cp -r /tmp/ai-research-skills/22-agent-native-research-artifact/manager ~/.gemini/config/skills/ara-research-manager
 cp -r /tmp/ai-research-skills/22-agent-native-research-artifact/reviewer ~/.gemini/config/skills/ara-rigor-reviewer
 
-# 5. Copy Google Awesome Skills
-for skill in papers-skill deep-research exa-search tavily-web research-brainstorming creative-thinking data-engineering-data-pipeline data-engineering-data-driven-feature data-structure-protocol dbt-transformation-patterns data-quality-frameworks database-architect database-optimizer polars data-scientist data-storytelling plotly python-pro python-patterns ml-engineer ai-ml ai-engineering-toolkit rag-engineer embedding-strategies hugging-face-datasets hugging-face-community-evals ml-pipeline-workflow mlops-engineer docker-expert devops-deploy unit-testing-test-generate 2slides-ppt-generator latex-paper-conversion architecture-decision-records docs-architect graphify save-session resume-session; do
+# 6. Copy Google Awesome Skills
+for skill in papers-skill deep-research exa-search tavily-web research-brainstorming creative-thinking data-engineering-data-pipeline data-engineering-data-driven-feature data-structure-protocol data-quality-frameworks polars data-scientist data-storytelling plotly ml-engineer ai-ml ai-engineering-toolkit rag-engineer embedding-strategies ml-pipeline-workflow mlops-engineer docker-expert devops-deploy unit-testing-test-generate 2slides-ppt-generator latex-paper-conversion architecture-decision-records docs-architect graphify save-session resume-session; do
     cp -r /tmp/awesome-skills/skills/$skill ~/.gemini/config/skills/
 done
 
-# 6. Cleanup
-rm -rf /tmp/ai-research-skills /tmp/awesome-skills
+# 7. Cleanup
+rm -rf /tmp/ai-research-skills /tmp/awesome-skills /tmp/ponytail-plugin
 echo "Antigravity Core Pack Installation Complete!"
 ```
 
@@ -143,14 +149,17 @@ git clone https://github.com/Orchestra-Research/AI-Research-SKILLs.git /tmp/ai-r
 # 2. Create Claude Skills Directory
 mkdir -p ~/.claude/skills
 
-# 3. Copy Academic Tools & Ponytail
+# 3. Copy Native Proprietary Skills
+cp -r skills/* ~/.claude/skills/
+
+# 4. Copy Academic Tools & Ponytail
 cp -r /tmp/ponytail-plugin ~/.claude/skills/ponytail
 cp -r /tmp/ai-research-skills/20-ml-paper-writing/ml-paper-writing ~/.claude/skills/
 cp -r /tmp/ai-research-skills/22-agent-native-research-artifact/compiler ~/.claude/skills/ara-compiler
 cp -r /tmp/ai-research-skills/22-agent-native-research-artifact/manager ~/.claude/skills/ara-research-manager
 cp -r /tmp/ai-research-skills/22-agent-native-research-artifact/reviewer ~/.claude/skills/ara-rigor-reviewer
 
-# 4. Cleanup
+# 5. Cleanup
 rm -rf /tmp/ponytail-plugin /tmp/ai-research-skills
 echo "Claude Code Setup Complete!"
 ```
