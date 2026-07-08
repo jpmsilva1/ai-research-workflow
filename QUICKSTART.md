@@ -72,6 +72,7 @@ In a new session, type `/resume`. The agent reads your `changelog.md` and `index
 | Command | What It Does |
 |---|---|
 | `/research` | Start a guided research workflow |
+| `/paper-code-finder` | Find source code for an academic paper |
 | `/save` | Save session to persistent memory |
 | `/resume` | Resume from last session |
 | `/lint` | Health-check the knowledge vault |

@@ -24,6 +24,7 @@ While this workflow bundles several open-source community skill packs, the follo
 | Skill | Category | Description & Features |
 | :--- | :--- | :--- |
 | 🎓 **`research-orchestrator`** | Workflow | Guides you through the full academic research lifecycle by suggesting the right skills at each stage. |
+| 🔍 **`paper-code-finder`** | Research | Finds official and unofficial code implementations for academic papers (PapersWithCode, Hugging Face, GitHub). |
 | 🖥️ **`distributed-gpu-engineer`** | Infra | Scales ML training across GPUs/nodes. Masters SLURM, PyTorch DDP, Ray, and CUDA OOM debugging. |
 | 🧪 **`experiment-sweeper`** | MLOps | ML hyperparameter orchestration. Converts hardcoded scripts to use Hydra/OmegaConf and sets up W&B Sweeps. |
 | ⚖️ **`academic-rebuttal-simulator`** | Peer Review | Simulates 'Reviewer 2' (NeurIPS/ICLR). **Production Validated** via Eval Harness (scores Weakness Recall, Calibration, Hallucination, Scope). |
