@@ -27,6 +27,9 @@ While this workflow bundles several open-source community skill packs, the follo
 - **`experiment-sweeper`**: Expert in ML hyperparameter orchestration. Converts hardcoded scripts to use Hydra/OmegaConf and sets up Weights & Biases Sweeps.
 - **`academic-rebuttal-simulator` (Production Validated)**: Simulates 'Reviewer 2' for ML papers (NeurIPS, ICLR). Critiques methodology, flags out-of-scope papers, and enforces strict grading calibration.
   - *Empirical Validation:* This skill is rigorously validated using a custom **Eval Harness** against a Ground Truth dataset of 20 real papers from ICLR and NeurIPS. It mathematically scores Weakness Recall (M1), Grade Calibration (M2), Hallucination (M3), and Scope Guards (M4) to ensure anti-sycophancy and high academic rigor.
+- **`output-shaper`**: Dynamic token compression and verbosity controller. Acts as a manual output shaper for agents to drastically reduce API costs.
+  - *Modes*: `/output-shaper lite` (removes obvious waste), `/output-shaper balanced` (prefers bullets, caps reasoning blocks), `/output-shaper ultra` (telegraphic responses, maximum token savings).
+  - *Deactivation*: Type `stop output-shaper` or `normal mode`.
 - **`lint-vault`**: Autonomous health-check for the Obsidian Vault to ensure structural integrity and correct Zettelkasten linking.
 
 ## The Network Compression Engine (Layer 1)

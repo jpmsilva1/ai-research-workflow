@@ -137,6 +137,7 @@ Tools for maintaining clean codebases and pristine documentation.
 - `ponytail-audit`: Whole-repo scans for over-engineering and bloat.
 - `ponytail-debt`: Harvesting technical debt markers into persistent ledgers.
 - `ponytail-review`: Strict PR reviews hunting for speculative abstractions.
+- `output-shaper`: Dynamic token compression and verbosity controller. Control how much the agent talks via /output-shaper lite, balanced, ultra.
 
 ## 9. Persistent Memory & Workflow Integration
 Tools enabling the Zettelkasten state machine and project intelligence.

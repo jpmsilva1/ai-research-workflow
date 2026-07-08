@@ -99,9 +99,19 @@ graph TD
   * **`/ponytail [lite | full | ultra]`**: Defines the "laziness level" (or objectivity) the agent should have when programming.
   * **`/ponytail-debt`**: Logs technical shortcuts taken so technical debt is not forgotten.
 
+### 7. 🗜️ Dynamic Token Compression (Output Shaper)
+*Stop your agent from talking too much and burning your API credits.*
+
+* **What it is:** A native skill (`output-shaper`) that dynamically controls the agent's verbosity mid-session. While Ponytail forces the agent to write *clean code*, Output Shaper forces the agent to *talk less*.
+* **Usage Modes:**
+  * **`/output-shaper lite`**: Removes pleasantries and obvious waste.
+  * **`/output-shaper balanced`**: Caps reasoning blocks, enforces bullet points, removes redundant context. (Default).
+  * **`/output-shaper ultra`**: Maximum savings. Telegraphic responses, single-sentence acknowledgments, inline answers only.
+* **Deactivation:** Type `stop output-shaper` or `normal mode`.
+
 ---
 
-### 7. 🧠 Persistent Memory (Antigravity + Obsidian + Graphify)
+### 8. 🧠 Persistent Memory (Antigravity + Obsidian + Graphify)
 *Artificial intelligence systems typically suffer from amnesia between sessions. We have configured an architecture for the agent to have a permanent memory of your research project using Obsidian.*
 
 * **The Concept:** The agent is globally configured to interact with a vault located at `~/Documents/AntigravityBrain/`. Instead of spending tokens rereading your entire code every session, the agent consults the structural mapping and logbook stored in this vault.
@@ -110,7 +120,7 @@ graph TD
   * **Upon closing (`/save`):** When finishing a day of research, type `/save`. An official log will be created in the `/logs/` folder detailing decisions, context, and pending tasks.
   * **Upon starting (`/resume`):** In a new conversation, type `/resume`. The agent will read the latest files generated in your vault and perfectly recover the context of where you left off.
 
-### 8. 🗜️ Network Compression (Headroom)
+### 9. 🗜️ Network Compression (Headroom)
 *To prevent massive token bills when the agent reads large files or logs, all your interactions are invisibly compressed.*
 
 * **The Concept:** A local background service (`headroom proxy`) intercepts the data your agent tries to send to the LLM API. It crushes JSONs, minifies ASTs, and compresses text without losing meaning.
