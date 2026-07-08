@@ -104,11 +104,11 @@ echo -e "${CYAN}Installing skills...${RESET}"
 TEMP_DIR=$(mktemp -d)
 trap 'rm -rf "$TEMP_DIR"' EXIT ERR
 
-# Clone repos to temp
-git clone --quiet https://github.com/DietrichGebert/ponytail "$TEMP_DIR/ponytail-plugin" 2>/dev/null || true
-git clone --quiet https://github.com/Orchestra-Research/AI-Research-SKILLs.git "$TEMP_DIR/ai-research-skills" 2>/dev/null || true
-git clone --quiet https://github.com/google/antigravity-awesome-skills.git "$TEMP_DIR/awesome-skills" 2>/dev/null || true
-git clone --quiet https://github.com/Champbreed/AegisOps-AI.git "$TEMP_DIR/aegisops-ai" 2>/dev/null || true
+# Clone repos to temp (disable terminal prompts for private/missing repos)
+env GIT_TERMINAL_PROMPT=0 git clone --quiet https://github.com/DietrichGebert/ponytail "$TEMP_DIR/ponytail-plugin" 2>/dev/null || true
+env GIT_TERMINAL_PROMPT=0 git clone --quiet https://github.com/Orchestra-Research/AI-Research-SKILLs.git "$TEMP_DIR/ai-research-skills" 2>/dev/null || true
+env GIT_TERMINAL_PROMPT=0 git clone --quiet https://github.com/google/antigravity-awesome-skills.git "$TEMP_DIR/awesome-skills" 2>/dev/null || true
+env GIT_TERMINAL_PROMPT=0 git clone --quiet https://github.com/Champbreed/AegisOps-AI.git "$TEMP_DIR/aegisops-ai" 2>/dev/null || true
 
 if [[ "$AGENT_CHOICE" == "1" || "$AGENT_CHOICE" == "3" ]]; then
     SKILLS_DIR="$HOME/.gemini/config/skills"
