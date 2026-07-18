@@ -1,0 +1,26 @@
+{
+  "skill_name": "academic-code-replicator",
+  "evals": [
+    {
+      "id": 1,
+      "name": "Apple Silicon Native Compilation Wall",
+      "prompt": "I need to replicate this paper. The code is in a folder `src/` and has a `requirements.txt` pinning `tensorflow==2.3.0` and `numpy==1.18.5`. I'm running on an M2 Mac. Please ingest and construct the environment.",
+      "expected_output": "Identifies OS as arm64, detects TensorFlow 2.3 in requirements.txt, triggers Phase 2 Error Type A (Version Not Found), and recommends Conda environment with macOS specific tensorflow-macos or Rosetta 2.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "name": "The R Memory Bomb",
+      "prompt": "Help me run this R experiment. The entry point is `run_simulations.R`. Inside, it loads a 5GB CSV file into a dataframe, then calls `makeCluster(16)` and `registerDoParallel()`, followed by a `foreach` loop over 1000 iterations. Fix it so it runs without crashing my laptop.",
+      "expected_output": "Phase 1 audit_repo.sh detects doParallel. Phase 3 flags it as a high-risk memory bomb (referencing lang-r.md) and proposes rewriting the loop to use native multithreading or drastically reducing cores.",
+      "files": []
+    },
+    {
+      "id": 3,
+      "name": "The Cluster Escalation (Bridge 3)",
+      "prompt": "I want to reproduce the main training loop in `train_gpt2_reproduction.py`. The paper says it trained for 7 days on 8x V100 GPUs. I only have a local MacBook Pro, but I have SSH access to our university SLURM cluster. Proceed through Phase 4.",
+      "expected_output": "Phase 4 estimates runtime > 12 hours or requires massive VRAM. The agent triggers Bridge 3 (distributed-gpu-engineer), pivoting from a local bash orchestrator to writing a SLURM sbatch script.",
+      "files": []
+    }
+  ]
+}

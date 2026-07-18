@@ -30,6 +30,7 @@ While this workflow bundles several open-source community skill packs, the follo
 | ⚖️ **`academic-rebuttal-simulator`** | Peer Review | Simulates 'Reviewer 2' (NeurIPS/ICLR). **Production Validated** via Eval Harness (scores Weakness Recall, Calibration, Hallucination, Scope). |
 | 🗜️ **`output-shaper`** | Token Mgmt | Dynamic verbosity controller to slash API costs. Modes: `lite`, `balanced`, `ultra`. Deactivate with `stop output-shaper`. |
 | 🧠 **`lint-vault`** | Memory | Autonomous health-check for the Obsidian Vault to ensure structural integrity and correct Zettelkasten linking. |
+| 🧬 **`academic-code-replicator`** | Reproducibility | Safely reproduces legacy academic code experiments. Enforces strict execution boundaries and prevents supply-chain attacks. |
 
 ## The Network Compression Engine (Layer 1)
 
@@ -136,6 +137,21 @@ This ecosystem is an amalgamation of brilliant open-source tools. Credit belongs
 ## Release Notes
 
 <details open>
+<summary><b>🚀 v4.3.0: The Academic Replication Release</b></summary>
+<br>
+
+This release introduces the `academic-code-replicator` skill and implements a rigorous, audited security posture for autonomous agent execution:
+
+*   **`academic-code-replicator` Skill:** A complete, 5-phase lifecycle workflow for safely reproducing experiments from legacy academic papers. It enforces the "Sacred Boundary Principle" (never modifying the authors' original code) and handles everything from dependency archaeology to SLURM cluster execution.
+*   **Agent Safety Guardrails:** Following a comprehensive AI engineering security audit, this release implements strict Human-in-the-Loop (HITL) constraints for dangerous operations:
+    *   **Phase 0 (Anti-Injection):** Hard boundaries ignoring malicious meta-instructions inside repository documentation.
+    *   **Phase 1 (Untrusted Downloads):** Flags non-academic domains as `❌ UNTRUSTED DOWNLOAD` prior to fetching data.
+    *   **Phase 2 (Supply-Chain):** Enforces a mandatory confirmation gate before installing reconstructed `requirements.txt` manifests to prevent typosquatting/malware.
+    *   **Phase 4 (Blast Radius):** Implements strong sandboxing recommendations and mandates explicit approval before submitting massive, unvetted jobs to shared HPC/SLURM clusters.
+
+</details>
+
+<details>
 <summary><b>🚀 v4.2.0: Academic Code Discovery</b></summary>
 <br>
 

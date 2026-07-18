@@ -62,6 +62,7 @@ graph TD
 ### 3. 🧠 Machine Learning and Deep Learning Training
 *The creation of intelligence.*
 
+* **`academic-code-replicator`**: The archaeology tool for reproducing experiments from legacy academic papers. Enforces the "Sacred Boundary Principle" to never modify original code, and includes rigorous security guardrails against malicious datasets or dependencies. *(Created by João P. M. Silva)*
 * **`ml-engineer` & `ai-ml`**: Forces the use of *Best Practices* for PyTorch or TensorFlow. Avoids data leakage in cross-validation, suggests modern architectures (ResNet, Transformers, Diffusion), and manages correct GPU (CUDA) usage.
 * **`distributed-gpu-engineer`**: Scales your models to clusters (SLURM, Ray, PyTorch DDP) and debugs CUDA OOMs. **Mandates and deeply analyzes cluster documentation to prevent configuration errors.** *(Created by João P. M. Silva)*
 * **`ai-engineering-toolkit`**: The Swiss Army knife of modern AI Engineering. Brings production-ready workflows: prompt evaluation across 8 dimensions, context limit planning, agent security auditing, and *eval harnesses* creation.

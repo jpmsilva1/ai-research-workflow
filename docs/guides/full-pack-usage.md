@@ -34,6 +34,7 @@ Tools for statistical validation and visual storytelling.
 ## 3. Machine Learning & AI Engineering
 End-to-end tools for deploying, training, and tracking machine learning models.
 
+- `academic-code-replicator`: Complete 5-phase lifecycle workflow for safely reproducing experiments from legacy academic papers with rigorous security boundaries. *(Authored by João P. M. Silva)*
 - `distributed-gpu-engineer`: SLURM, Ray, and PyTorch DDP scaling. **Mandates deep analysis of cluster documentation for safe execution.** *(Authored by João P. M. Silva)*
 - `academic-rebuttal-simulator`: Simulates academic peer review and rebuttal drafting. *(Authored by João P. M. Silva)*
 - `experiment-sweeper`: Hydra configs and Weights & Biases hyperparameter sweeps. *(Authored by João P. M. Silva)*
